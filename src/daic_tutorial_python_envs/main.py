@@ -41,6 +41,25 @@ def subtract(a: int, b: int) -> int:
     return a - b
 
 
+def multiply(a: int, b: int) -> int:
+    """Multiplies two positive numbers.
+
+    Args:
+        a: The first number.
+        b: The second number.
+
+    Returns:
+        The product of the two numbers.
+
+    Raises:
+        ValueError: If either a or b is negative.
+    """
+    if a < 0 or b < 0:
+        msg = "Both arguments must be positive"
+        raise ValueError(msg)
+    return a * b
+
+
 def foo1(a):
     """This function is foo."""
     c = a + 1
