@@ -82,6 +82,10 @@ def foo4():
     return menu_1, menu_2
 
 
+def foo5():
+    print("The menus of foo4 are: ", foo4())
+
+
 def main() -> None:
     print(f"Running daic_tutorial_python_envs version {__version__}")
     print(f"Result is: 1+2 = {add(1, 2)}")
