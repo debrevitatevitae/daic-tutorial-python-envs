@@ -1,6 +1,6 @@
 """
 daic-tutorial-python-envs: The tutorial for the DAIC course on Python reproducibility
-"""  # noqa: E501, RUF100
+"""  # noqa: D200, D212, D415, E501, RUF100
 
 from __future__ import annotations
 
