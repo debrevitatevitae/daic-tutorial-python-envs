@@ -22,6 +22,25 @@ def add(a: int, b: int) -> int:
     return a + b
 
 
+def subtract(a: int, b: int) -> int:
+    """Subtracts two positive numbers.
+
+    Args:
+        a: The first number.
+        b: The second number.
+
+    Returns:
+        The difference of the two numbers.
+
+    Raises:
+        ValueError: If either a or b is negative.
+    """
+    if a < 0 or b < 0:
+        msg = "Both arguments must be positive"
+        raise ValueError(msg)
+    return a - b
+
+
 def main() -> None:
     print(f"Running daic_tutorial_python_envs version {__version__}")
     print(f"Result is: 1+2 = {add(1, 2)}")
