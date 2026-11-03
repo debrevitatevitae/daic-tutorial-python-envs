@@ -1,0 +1,11 @@
+# Changes here will be overwritten by Copier
+_commit: v0.7.3
+_src_path: git+https://gitlab.ewi.tudelft.nl/reit/python-package-template
+email: giotb92@gmail.com
+environment_manager: uv
+full_name: debrevitatevitae
+license: GPL
+manual_lint_fixes: true
+min_python_version: '3.11'
+project_name: daic-tutorial-python-envs
+project_short_description: The tutorial for the DAIC course on Python reproducibility

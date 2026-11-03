@@ -1,0 +1,119 @@
+[project]
+name = "daic-tutorial-python-envs"
+dynamic = ["version"]
+authors = [
+  { name = "debrevitatevitae", email = "giotb92@gmail.com" },
+]
+description = "The tutorial for the DAIC course on Python reproducibility"
+readme = "README.md"
+requires-python = ">=3.11"
+dependencies = []
+
+[dependency-groups]
+dev = [
+  "hatch>=1.16.3",
+  "mkdocstrings-python>=2.0.3",
+  "prek>=0.3.2",
+  "pytest>=8.4.2",
+  "pytest-cov>=5.0.0",
+  "ruff>=0.15.7",
+  "setuptools-scm>=8.3.1",
+  "zensical>=0.0.29",
+]
+
+[build-system]
+requires = ["hatchling", "hatch-vcs"]
+build-backend = "hatchling.build"
+
+[tool.hatch.version]
+source = "vcs"
+
+[tool.hatch.build.hooks.vcs]
+version-file = "_version.py"
+
+[project.urls]
+Homepage = "https://github.com/debrevitatevitae/daic-tutorial-python-envs"
+
+[project.scripts]
+main_script = "daic_tutorial_python_envs.main:main"
+
+[tool.pytest.ini_options]
+minversion = "6.0"
+addopts = ["-ra", "--showlocals", "--strict-markers", "--strict-config"]
+xfail_strict = true
+filterwarnings = [
+  "error",
+]
+log_cli_level = "INFO"
+testpaths = [
+  "tests",
+]
+
+[tool.coverage]
+run.source = ["daic_tutorial_python_envs"]
+port.exclude_lines = [
+  'pragma: no cover',
+  '\.\.\.',
+  'if typing.TYPE_CHECKING:',
+]
+
+[tool.ruff]
+src = ["src"]
+line-length = 88
+
+[tool.ruff.format]
+docstring-code-format = true  # code snippets in docstrings will be formatted
+
+[tool.ruff.lint.isort]
+known-first-party = ["daic_tutorial_python_envs"]
+
+[tool.ruff.lint]
+# For more strict linting and code simplifications, replace this with
+# https://github.com/NLeSC/python-template/blob/main/template/pyproject.toml.jinja#L121-L136
+select = [
+  "E", "F", "W", # flake8
+  "B",           # flake8-bugbear
+  "I",           # isort
+  "ARG",         # flake8-unused-arguments
+  "C4",          # flake8-comprehensions
+  "EM",          # flake8-errmsg
+  "ICN",         # flake8-import-conventions
+  "ISC",         # flake8-implicit-str-concat
+  "G",           # flake8-logging-format
+  "PGH",         # pygrep-hooks
+  "PIE",         # flake8-pie
+  "PL",          # pylint
+  "PT",          # flake8-pytest-style
+  "RET",         # flake8-return
+  "RUF",         # Ruff-specific
+  "SIM",         # flake8-simplify
+  "UP",          # pyupgrade
+  "YTT",         # flake8-2020
+  "EXE",         # flake8-executable
+  # "D",           # pydocstyle, uncomment to have the docstrings linted
+  # "ANN",         # flake8-annotations, uncomment to have type hint annotations linted
+]
+ignore = [
+  "PLR",    # Design related pylint codes
+  "ISC001", # Conflicts with formatter
+]
+pydocstyle.convention = "google"
+
+[tool.ruff.lint.per-file-ignores]
+# Tests can ignore a few extra rules
+"tests/**.py" = [
+    "ANN201", # Missing return type annotation for public function
+    "D103",   # Missing docstring
+    "S101",   # Use of assert is detected
+    "INP001", # Missing __init__.py file
+]
+
+[tool.uv]
+exclude-newer = "1 week"
+
+[tool.yamlfix]
+line_length = 120
+sequence_style = "keep_style"
+explicit_start = false
+whitelines = 1
+section_whitelines = 1
