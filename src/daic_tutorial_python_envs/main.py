@@ -42,6 +42,7 @@ def subtract(a: int, b: int) -> int:
 
 
 def foo1(a):
+    """This function is foo."""
     c = a + 1
     if a > 10:
         return 10
@@ -49,6 +50,7 @@ def foo1(a):
 
 
 def foo2(a):
+    """This function is foo."""
     b = 0  # noqa: F841
     c = a + 1
     if a > 0:  # noqa: SIM102
@@ -58,6 +60,7 @@ def foo2(a):
 
 
 def foo3(a):
+    """This function is foo."""
     b = 0  # noqa: F841
     c = a + 1
     if a > 0:  # noqa: SIM102
@@ -67,7 +70,7 @@ def foo3(a):
 
 
 def foo4():
-
+    """This function is foo."""
     menu_1 = {"1": "Start Game", "2": "Load Game", "3": "Options", "4": "Exit"}
 
     # fmt: off
@@ -83,10 +86,17 @@ def foo4():
 
 
 def foo5():
+    """This function is foo."""
     print("The menus of foo4 are: ", foo4())
 
 
+def foo6():
+    """This function is foo."""
+    print("This is foo6")
+
+
 def main() -> None:
+    """Main."""
     print(f"Running daic_tutorial_python_envs version {__version__}")
     print(f"Result is: 1+2 = {add(1, 2)}")
     print(f"foo1(5) = {foo1(5)}")
