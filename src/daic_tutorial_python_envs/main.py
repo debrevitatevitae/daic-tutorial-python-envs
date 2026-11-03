@@ -41,6 +41,13 @@ def subtract(a: int, b: int) -> int:
     return a - b
 
 
+def foo1(a):
+    c = a + 1
+    if a > 10:
+        return 10
+    return a + c
+
+
 def main() -> None:
     print(f"Running daic_tutorial_python_envs version {__version__}")
     print(f"Result is: 1+2 = {add(1, 2)}")
