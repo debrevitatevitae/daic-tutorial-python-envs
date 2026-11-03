@@ -89,6 +89,11 @@ def foo5():
 def main() -> None:
     print(f"Running daic_tutorial_python_envs version {__version__}")
     print(f"Result is: 1+2 = {add(1, 2)}")
+    print(f"foo1(5) = {foo1(5)}")
+    print(f"foo2(5) = {foo2(5)}")
+    print(f"foo3(5) = {foo3(5)}")
+    foo4()
+    foo5()
 
 
 if __name__ == "__main__":
