@@ -8,6 +8,7 @@ description = "The tutorial for the DAIC course on Python reproducibility"
 readme = "README.md"
 requires-python = ">=3.11"
 dependencies = [
+    "numpy>=2.4.6",
     "requests>=2.34.2",
 ]
 
