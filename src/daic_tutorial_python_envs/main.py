@@ -49,9 +49,18 @@ def foo1(a):
 
 
 def foo2(a):
-    b = 0
+    b = 0  # noqa: F841
     c = a + 1
-    if a > 0:
+    if a > 0:  # noqa: SIM102
+        if a > 10:
+            return 10
+    return a + c
+
+
+def foo3(a):
+    b = 0  # noqa: F841
+    c = a + 1
+    if a > 0:  # noqa: SIM102
         if a > 10:
             return 10
     return a + c
