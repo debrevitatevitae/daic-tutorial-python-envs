@@ -38,6 +38,8 @@ Homepage = "https://github.com/debrevitatevitae/daic-tutorial-python-envs"
 
 [project.scripts]
 main_script = "daic_tutorial_python_envs.main:main"
+project-info = "daic_tutorial_python_envs.auto.project_info:show_project_info"
+run-tests = "daic_tutorial_python_envs.auto.run_tests:run_tests"
 
 [tool.pytest.ini_options]
 minversion = "6.0"
