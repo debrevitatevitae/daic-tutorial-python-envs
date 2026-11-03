@@ -7,6 +7,7 @@ repo_url: https://github.com/debrevitatevitae/daic-tutorial-python-envs
 nav:
   - Home:
       - index.md
+  - My First Page: my-first-page.md
 
 theme:
   language: en
